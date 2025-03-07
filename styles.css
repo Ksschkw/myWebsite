@@ -211,6 +211,15 @@ input, textarea {
     color: var(--neon-green);
 }
 
+:root {
+    --neon-green: #39FF14;
+    --silver: #C0C0C0;
+    --dark-bg: #1A1A1A;
+}
+
+/* Existing styles remain the same */
+
+/* Object Detection Additions */
 .demo-container {
     position: relative;
     width: 100%;
@@ -220,26 +229,92 @@ input, textarea {
     border-radius: 10px;
     overflow: hidden;
 }
-  
+
 #webcam, #output {
     width: 100%;
     height: auto;
-    transform: scaleX(-1); /* Mirror webcam feed */
 }
-  
+
+#webcam {
+    transform: scaleX(-1);
+}
+
 #output {
     position: absolute;
     top: 0;
     left: 0;
 }
-  
+
+.fps-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(26, 26, 26, 0.8);
+    color: var(--neon-green);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    z-index: 2;
+}
+
+.ai-controls {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid var(--neon-green);
+    border-radius: 8px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.neon-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--neon-green);
+    border-radius: 3px;
+    position: relative;
+}
+
+input[type="checkbox"]:checked + .neon-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
+}
+
+.confidence-control {
+    margin-top: 1rem;
+}
+
+input[type="range"] {
+    width: 200px;
+    background: var(--dark-bg);
+    accent-color: var(--neon-green);
+    margin: 0 1rem;
+}
+
 .cta-button.secondary {
     background: transparent;
     border: 2px solid var(--neon-green);
     color: var(--neon-green);
     margin-left: 1rem;
 }
-  
+
 #stopButton {
     display: none;
 }
