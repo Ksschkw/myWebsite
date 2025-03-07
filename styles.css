@@ -211,6 +211,47 @@ input, textarea {
     color: var(--neon-green);
 }
 
+.demo-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    border: 2px solid var(--neon-green);
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+#webcam, #output {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* Mirror webcam feed */
+}
+  
+#output {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+  
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    margin-left: 1rem;
+}
+  
+#stopButton {
+    display: none;
+}
+  /* Update in style.css */
+#webcam {
+    transform: scaleX(-1); /* Mirror only the video */
+}
+  
+#output {
+    transform: none; /* Remove flip from canvas */
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;

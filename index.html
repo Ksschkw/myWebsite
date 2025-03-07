@@ -61,6 +61,21 @@
                     <p>My initial website</p>
                     <a href="https://okaforkosisochukwu.onrender.com/" target="_blank" class="cta-button" style="margin-top: 1rem;">View</a>
                 </div>
+                <!-- Add this inside your portfolio section -->
+                <div class="project-card">
+                    <h3>Real-Time Object Detection Demo</h3>
+                    <p>Interactive AI model detecting 80+ objects (powered by TensorFlow.js)</p>
+                    <div class="demo-container">
+                        <video id="webcam" autoplay muted playsinline></video>
+                        <canvas id="output"></canvas>
+                    </div>
+                    <button id="startButton" class="cta-button">Start Webcam</button>
+                    <button id="stopButton" class="cta-button secondary">Stop</button>
+                </div>
+  
+  <!-- Add these right before closing </body> tag -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2"></script>
             </div>
         </div>
     </section>
