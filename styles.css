@@ -327,6 +327,25 @@ input[type="range"] {
     transform: none; /* Remove flip from canvas */
 }
 
+.about-us { 
+    padding: 40px 20px; 
+    text-align: center; 
+    background: transparent; 
+    color: #C0C0C0; 
+    margin-top: 20px; 
+    border-radius: 10px; 
+} 
+.about-us h2 { 
+    font-size: 36px; 
+    margin-bottom: 20px; 
+    font-family: 'Bebas Neue', sans-serif;
+} 
+.about-us p { 
+    font-size: 18px; 
+    margin-bottom: 20px; 
+    line-height: 1.5; 
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
