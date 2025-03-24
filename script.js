@@ -172,7 +172,7 @@ async function sendMessage() {
         showLoadingDots();
         
         // Replace with your actual API endpoint
-        const response = await fetch('YOUR_API_ENDPOINT', {
+        const response = await fetch('https://chatbackend-kosi.onrender.com/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
