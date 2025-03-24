@@ -153,3 +153,67 @@ document.addEventListener('DOMContentLoaded', () => {
             `${Math.round(e.target.value * 100)}%`;
     });
 });
+// Chatbot functionality
+const chatContainer = document.getElementById('chatContainer');
+const chatInput = document.getElementById('chatInput');
+const sendButton = document.getElementById('sendButton');
+const statusText = document.getElementById('statusText');
+
+async function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    addMessage(message, 'user');
+    chatInput.value = '';
+    
+    try {
+        statusText.textContent = 'Status: Thinking...';
+        showLoadingDots();
+        
+        // Replace with your actual API endpoint
+        const response = await fetch('YOUR_API_ENDPOINT', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+        addMessage(data.response, 'bot');
+    } catch (error) {
+        addMessage("⚠️ Sorry, I'm having trouble connecting. Try again later!", 'bot');
+    } finally {
+        statusText.textContent = 'Status: Ready';
+        hideLoadingDots();
+    }
+}
+
+function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}-message`;
+    messageDiv.textContent = text;
+    chatContainer.appendChild(messageDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+// Loading animation
+function showLoadingDots() {
+    const loading = document.createElement('span');
+    loading.id = 'loading';
+    loading.className = 'loading-dots';
+    loading.textContent = '...';
+    chatContainer.appendChild(loading);
+}
+
+function hideLoadingDots() {
+    const loading = document.getElementById('loading');
+    if (loading) loading.remove();
+}
+
+// Event listeners
+sendButton.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});

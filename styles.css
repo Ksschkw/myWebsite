@@ -1,7 +1,7 @@
 :root {
-    --neon-green: #39FF14;
+    --neon-green: #30da12;
     --silver: #C0C0C0;
-    --dark-bg: #1A1A1A;
+    --dark-bg: #000300;
 }
 
 body {
@@ -216,11 +216,11 @@ input, textarea {
     color: var(--neon-green);
 }
 
-:root {
+/* :root {
     --neon-green: #39FF14;
     --silver: #C0C0C0;
     --dark-bg: #1A1A1A;
-}
+} */
 
 /* Existing styles remain the same */
 
@@ -349,6 +349,62 @@ input[type="range"] {
     font-size: 18px; 
     margin-bottom: 20px; 
     line-height: 1.5; 
+}
+
+/* Add to existing Object Detection styles */
+.chat-bot-section {
+    margin: 2rem 0;
+    border: 2px solid var(--neon-green);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.chat-container {
+    height: 400px;
+    overflow-y: auto;
+    background: #2A2A2A;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chat-message {
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: rgba(57, 255, 20, 0.1);
+    border: 1px solid var(--neon-green);
+    margin-left: auto;
+}
+
+.bot-message {
+    background: #2A2A2A;
+    border: 1px solid var(--silver);
+}
+
+.chat-input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+#chatInput {
+    flex: 1;
+    background: #2A2A2A;
+    color: var(--silver);
+    border: 1px solid var(--neon-green);
+}
+
+#chatInput:focus {
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.loading-dots {
+    color: var(--neon-green);
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
