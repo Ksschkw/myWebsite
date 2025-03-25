@@ -362,7 +362,7 @@ input[type="range"] {
 .chat-container {
     height: 400px;
     overflow-y: auto;
-    background: #2A2A2A;
+    background: #000300;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -382,7 +382,7 @@ input[type="range"] {
 }
 
 .bot-message {
-    background: #2A2A2A;
+    background: #000a00;
     border: 1px solid var(--silver);
 }
 
@@ -393,7 +393,7 @@ input[type="range"] {
 
 #chatInput {
     flex: 1;
-    background: #2A2A2A;
+    background: #000300;
     color: var(--silver);
     border: 1px solid var(--neon-green);
 }
@@ -432,7 +432,7 @@ input[type="range"] {
 }
 
 .project-card {
-    background: #2A2A2A;
+    background: #000a00;
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -476,9 +476,9 @@ input[type="range"] {
     transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-links {
+/* .project-card:hover .project-links {
     opacity: 1;
-}
+} */
 
 .tech-stack {
     display: flex;
@@ -498,24 +498,24 @@ input[type="range"] {
     transform: scale(1.1);
 }
 
-.project-meta {
+/* .project-meta {
     display: flex;
     gap: 0.5rem;
     padding: 1rem;
-}
+}*/
+
 
 .project-tag {
     font-size: 0.8rem;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     background: #3a3a3a;
-}
-
+} 
 .ai-tag { background: rgba(0, 255, 100, 0.1); border: 1px solid var(--neon-green); }
 .web-tag { background: rgba(33, 150, 243, 0.1); border: 1px solid #2196f3; }
 .api-tag { background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc107; }
 
-.cta-button {
+/* .cta-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -525,7 +525,7 @@ input[type="range"] {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 255, 100, 0.2);
-}
+} */
 
 .github-button {
     background: rgba(255, 255, 255, 0.1);
