@@ -476,9 +476,9 @@ input[type="range"] {
     transition: opacity 0.3s ease;
 }
 
-/* .project-card:hover .project-links {
+.project-card:hover .project-links {
     opacity: 1;
-} */
+}
 
 .tech-stack {
     display: flex;
