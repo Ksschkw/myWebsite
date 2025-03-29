@@ -531,6 +531,36 @@ input[type="range"] {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+/* Telegram Bot Specific Styles */
+.project-features {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    list-style-type: '▹ ';
+    color: var(--silver);
+}
+
+.project-features li {
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+.status-tag {
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid #ffa500;
+    color: #ffa500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.fa-telegram, .fa-cloud-sun-rain {
+    color: #0088cc;
+}
+
+.fa-robot {
+    margin-right: 0.5rem;
+}
 
 /* Add media queries for responsiveness */
 @media (max-width: 768px) {
