@@ -36,14 +36,35 @@ body {
     text-decoration: none;
 }
 /* Hide hamburger and checkbox by default */
-.menu-toggle, .hamburger {
+/* Hamburger Styles */
+.hamburger {
     display: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Menu Styles */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
 
-.nav-links {
-    list-style: none;
-    float: right;
+.menu-toggle {
+    display: none;
 }
 
 .nav-links li {
@@ -216,13 +237,6 @@ input, textarea {
     color: var(--neon-green);
 }
 
-/* :root {
-    --neon-green: #39FF14;
-    --silver: #C0C0C0;
-    --dark-bg: #1A1A1A;
-} */
-
-/* Existing styles remain the same */
 
 /* Object Detection Additions */
 .demo-container {
@@ -568,62 +582,7 @@ input[type="range"] {
         grid-template-columns: 1fr;
     }
 }
-
 @media (max-width: 768px) {
-    /* .nav-links {
-        display: none;
-    } */
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        /* background: rgba(0, 0, 0, 0.9); Dark translucent background */
-        backdrop-filter: blur(5px); /* Frosted glass effect */
-        padding: 1rem;
-        flex-direction: column;
-        text-align: center;
-        /* border: 1px solid #39FF14; Neon border */
-        box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); /* Glow effect */
-        background: rgba(0, 0, 0, 0.7); /* More transparent */
-        border: 1px solid rgba(57, 255, 20, 0.5); /* Faded neon border */
-    }
-
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #39FF14; /* Neon green color */
-        text-shadow: 0 0 8px rgba(57, 255, 20, 0.5); /* Glow effect */
-    }
-
-    .nav-links li a:hover {
-        color: #ffffff;
-        text-shadow: 0 0 10px #39FF14;
-    }
-
-    .menu-toggle:checked ~ .nav-links {
-        display: flex;
-        animation: menuSlide 0.3s ease;
-    }
-
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .menu-toggle:checked ~ .nav-links {
-        display: flex;
-    }
-    
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -636,5 +595,70 @@ input[type="range"] {
     .profile-photo {
         width: 250px;
         height: 250px;
+    }
+
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+        margin-right: 15px;
+        right: 2rem;
+        position: absolute;
+        top: 1.5rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 50%;
+        left: 8%; 
+        width: 70%;
+        background: #000;
+        flex-direction: column;
+        padding: 15px;
+        border: 1px solid #5BFD01;
+        box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
+        border-radius: 8px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 10px;
+    }
+
+    /* Hamburger Animation */
+    .menu-toggle:checked + .hamburger .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle:checked + .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle:checked + .hamburger .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links li {
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        color: #fff;
+        font-size: 0.9rem;
+    }
+
+    .nav-links li a:hover {
+        color: #5BFD01;
+        text-shadow: 0 0 10px #5BFD01;
     }
 }
