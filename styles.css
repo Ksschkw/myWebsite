@@ -22,7 +22,11 @@ body {
     background: var(--dark-bg);
     z-index: 1000;
 }
-
+.navbar .container {
+    display: flex;
+    align-items: center;        
+    justify-content: space-between; 
+  }
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -57,12 +61,14 @@ body {
 
 /* Menu Styles */
 .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-
+    display: flex;      
+    align-items: center; 
+    gap: 2rem;          
+    margin: 0;          
+    padding: 0;          
+    list-style: none;    
+  }
+  
 .menu-toggle {
     display: none;
 }
