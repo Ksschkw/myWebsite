@@ -620,11 +620,13 @@ input[type="range"] {
         position: absolute;
         top: 100%;
         right: 50%;
-        left: 8%; 
-        width: 70%;
+        left: 8%;
+        width: 80%;
         background: #000;
         flex-direction: column;
-        padding: 15px;
+        margin: 0;
+        padding: 0;
+        /* padding: 15px; */
         border: 1px solid #5BFD01;
         box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
         border-radius: 8px;
@@ -661,8 +663,10 @@ input[type="range"] {
     .nav-links li a {
         color: #fff;
         font-size: 0.9rem;
+        display: block;       
+        width: 100%;       
+        text-align: center;
     }
-
     .nav-links li a:hover {
         color: #5BFD01;
         text-shadow: 0 0 10px #5BFD01;
