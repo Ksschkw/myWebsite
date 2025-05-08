@@ -171,7 +171,7 @@ async function sendMessage() {
         statusText.textContent = 'Status: Thinking...';
         showLoadingDots();
         
-        // Replace with your actual API endpoint
+        // My chatbot endpoint
         const response = await fetch('https://chatbackend-kosi.onrender.com/chat', {
             method: 'POST',
             headers: {
