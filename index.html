@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kosisochukwu |</title>
+    <title>Kosisochukwu | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -39,7 +39,7 @@
                     <p class="tagline">Software & AI/ML Engineer</p>
                     <div class="stats">
                         <div class="stat-item">
-                            <span class="stat-number">15+</span>
+                            <span class="stat-number"> -- </span>
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat-item">
@@ -56,20 +56,29 @@
         </div>
     </section>
 
-
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+            <h6>PSA: Check my <a href="https://github.com/Ksschkw">github</a> for more</h6>
+            
+            <!-- Portfolio Tabs -->
+            <div class="portfolio-tabs">
+                <button class="tab-button active" data-category="all">All Projects</button>
+                <button class="tab-button" data-category="ai">AI Projects</button>
+                <button class="tab-button" data-category="web">Web Projects</button>
+                <button class="tab-button" data-category="telegram">Telegram Bots</button>
+            </div>
+            
             <div class="portfolio-grid">
-                <!-- Object Detection Project -->
-                <div class="project-card">
+                <!-- Object Detection Project (AI) -->
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
                         <div class="project-thumbnail">
                             <img src="imagesnshii\object-detection-thumb.png" alt="Object detection preview">
                             <div class="project-links">
                                 <a href="#" class="cta-button" target="_blank">
-                                    <i  class="fas fa-desktop"></i> Live Demo
+                                    <i class="fas fa-desktop"></i> Live Demo
                                 </a>
                                 <a href="https://github.com/Ksschkw/myWebsite" class="cta-button github-button" target="_blank">
                                     <i class="fab fa-github"></i> Code
@@ -83,12 +92,10 @@
                             <div class="tech-stack">
                                 <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
                                 <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-                                <!-- <i class="devicon-nodejs-plain colored" title="Node.js"></i> -->
                             </div>
                         </div>
                     </div>
                     <p>Interactive AI model detecting 80+ objects (powered by TensorFlow.js)</p>
-                    
                     <div class="ai-controls">
                         <div class="filter-group">
                             <h4>Detect Objects:</h4>
@@ -121,7 +128,6 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="demo-container">
                         <div id="fpsCounter" class="fps-display">-- FPS</div>
                         <video id="webcam" autoplay muted playsinline></video>
@@ -129,51 +135,198 @@
                     </div>
                     <button id="startButton" class="cta-button">Start Webcam</button>
                     <button id="stopButton" class="cta-button secondary">Stop</button>
-                    
                 </div>
-                <div class="project-card">
+
+                <!-- MYRAGAGENT (AI) -->
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
                         <div class="project-thumbnail">
-                            <img src="imagesnshii\aiassistant.png" alt="AI image preview">
+                            <img src="https://opengraph.githubassets.com/1/Ksschkw/MYRAGAGENT" alt="MYRAGAGENT">
                             <div class="project-links">
-                                <a href="#" class="cta-button" target="_blank">
-                                    <i id="startButton" class="fas fa-desktop"></i> Live Demo
+                                <a href="https://agentkosi.onrender.com/" class="cta-button" target="_blank">
+                                    <i class="fas fa-desktop"></i> Live Demo
                                 </a>
-                                <a href="https://github.com/Ksschkw/chatbot_and_backendformywebsite" class="cta-button github-button" target="_blank">
+                                <a href="https://github.com/Ksschkw/MYRAGAGENT" class="cta-button github-button" target="_blank">
                                     <i class="fab fa-github"></i> Code
                                 </a>
                             </div>
                         </div>
-                        <h3>AI Chat Assistant</h3>
+                        <h3>MYRAGAGENT</h3>
                         <div class="project-meta">
                             <span class="project-tag ai-tag">AI/ML</span>
-                            <span class="project-tag web-tag">NLP</span>
                             <span class="project-tag api-tag">API</span>
                         </div>
                     </div>
-                    <p class="project-description">Custom-built chatbot (about me & other stuff) leveraging PyTorch with OpenRouter fallback. It's non-contextual(for now)</p>
-                    <div class="tech-stack">
-                        <i class="devicon-pytorch-original colored" title="PyTorch"></i>
-                        <i class="devicon-python-plain colored" title="Python"></i>
-                    </div>
-                    <div class="chat-bot-section">
-                        <div class="chat-container" id="chatContainer">
-                            <div class="chat-message bot-message">
-                                🤖 Hello! I'm your AI assistant. Ask me anything!
+                    <p>A Retrieval-Augmented Generation (RAG) Agent that provides intelligent responses based on personal details and general knowledge. Click the live demo link to try the agent or click <a href="https://agentkosi.onrender.com">here</a></p>
+                </div>
+
+                <!-- Vybe Analytics Telegram Bot (Telegram) -->
+                <div class="project-card" data-category="telegram">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="https://opengraph.githubassets.com/1/Ksschkw/vybe-telegram-bot" alt="Vybe Analytics Telegram Bot">
+                            <div class="project-links">
+                                <a href="https://t.me/VybeVigil_bot" class="cta-button" target="_blank">
+                                    <i class="fas fa-robot"></i> Try Bot
+                                </a>
+                                <a href="https://github.com/Ksschkw/vybe-telegram-bot" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
                             </div>
                         </div>
-                        
-                        <div class="chat-input-group">
-                            <input type="text" id="chatInput" placeholder="Type your message...">
-                            <button id="sendButton" class="cta-button">Send</button>
-                        </div>
-                        
-                        <div class="status-indicator">
-                            <span id="statusText" class="neon-green">Status: Ready</span>
+                        <h3>Vybe Analytics Telegram Bot</h3>
+                        <div class="project-meta">
+                            <span class="project-tag bot-tag">Bot</span>
+                            <span class="project-tag api-tag">API</span>
                         </div>
                     </div>
+                    <p>Provides real-time on-chain insights using Vybe Network APIs, including wallet tracking, token prices, and whale alerts.</p>
                 </div>
-                <div class="project-card">
+
+                <!-- FPS Gamers Event Website (Web) -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="imagesnshii\gaming.png" alt="GRPGHT game preview">
+                            <div class="project-links">
+                                <a href="http://kosisochukwu.pythonanywhere.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ksschkw/GRPGHT" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>FPS Gamers Event Website (GRPGHT)</h3>
+                        <div class="project-meta">
+                            <span class="project-tag web-tag">WEB</span>
+                            <span class="project-tag api-tag">API</span>
+                        </div>
+                    </div>
+                    <p>Platform for FPS gamers to compete in real-world events</p>
+                    <p>It was a school project, we were asked to build an event website</p>
+                    <p><b>A little about GRPGHT:</b></p>
+                    <p>GRPGHT, where FPS (First-Person Shooter) gamers come together to experience the thrill of live competitive gaming. Our mission is to create a dynamic and immersive platform that brings FPS enthusiasts of all skill levels to compete, collaborate, and celebrate their passion for gaming in a real-world setting.</p>
+                    <p>GRPGHT is just GroupEight without the vowels</p>
+                </div>
+
+                <!-- Bubblemaps Telegram Bot (Telegram) -->
+                <div class="project-card" data-category="telegram">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="https://opengraph.githubassets.com/1/Ksschkw/TheBubbleSnitchBot-2" alt="Bubblemaps Telegram Bot">
+                            <div class="project-links">
+                                <a href="https://t.me/TheBubbleSnitch_bot" class="cta-button" target="_blank">
+                                    <i class="fas fa-robot"></i> Try Bot
+                                </a>
+                                <a href="https://github.com/Ksschkw/TheBubbleSnitchBot-2" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>Bubblemaps Telegram Bot</h3>
+                        <div class="project-meta">
+                            <span class="project-tag bot-tag">Bot</span>
+                            <span class="project-tag api-tag">API</span>
+                        </div>
+                    </div>
+                    <p>Analyzes crypto tokens using Bubblemaps data, generating bubble maps and providing market insights and risk assessments.</p>
+                </div>
+
+                <!-- My First Website (Web) -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="imagesnshii\first.png" alt="First web preview">
+                            <div class="project-links">
+                                <a href="http://okaforkosisochukwu.onrender.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ksschkw/kosip" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>My First Website</h3>
+                        <div class="project-meta">
+                            <span class="project-tag web-tag">WEB</span>
+                        </div>
+                    </div>
+                    <p>My initial website</p>
+                    <a href="http://okaforkosisochukwu.onrender.com" target="_blank" class="cta-button" style="margin-top: 1rem;">View</a>
+                </div>
+
+                <!-- A School Lab Project (Web) -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="imagesnshii\lab.png" alt="Lab image preview">
+                            <div class="project-links">
+                                <a href="https://nigeria-net-justaschoollabproject-hostit.onrender.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ksschkw/Nigeria.net" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>A School Lab Project</h3>
+                        <div class="project-meta">
+                            <span class="project-tag web-tag">WEB</span>
+                        </div>
+                    </div>
+                    <p>I decided to host it, because why not?</p>
+                    <a href="https://nigeria-net-justaschoollabproject-hostit.onrender.com" target="_blank" class="cta-button" style="margin-top: 1rem;">View</a>
+                </div>
+
+                <!-- Kosi Weather (Web) -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="imagesnshii\weather.png" alt="Kosi Weather Preview">
+                            <div class="project-links">
+                                <a href="https://kosi-weather.onrender.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-desktop"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ksschkw/weatherkosi" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>Kosi Weather</h3>
+                        <div class="project-meta">
+                            <span class="project-tag web-tag">WEB</span>
+                            <span class="project-tag api-tag">API</span>
+                        </div>
+                    </div>
+                    <p>Weather forecast application allowing users to search by city.</p>
+                </div>
+
+                <!-- Krypto-Kosi (Web) -->
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <div class="project-thumbnail">
+                            <img src="imagesnshii\kryptokosi.png" alt="Krypto-Kosi Preview">
+                            <div class="project-links">
+                                <a href="https://krypto-kosi.onrender.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-desktop"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Ksschkw/KryptoKosi" class="cta-button github-button" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                        <h3>Krypto-Kosi</h3>
+                        <div class="project-meta">
+                            <span class="project-tag web-tag">WEB</span>
+                            <span class="project-tag api-tag">API</span>
+                        </div>
+                    </div>
+                    <p>Displays crypto prices with ranking by price and trend.</p>
+                </div>
+
+                <!-- Multi-Feature Telegram Bot (Telegram) -->
+                <div class="project-card" data-category="telegram">
                     <div class="project-header">
                         <div class="project-thumbnail">
                             <img src="imagesnshii/telegram-bot-thumb2.jpg" alt="Telegram Bot Preview">
@@ -198,6 +351,7 @@
                         <li>📈 Crypto Price Tracking (CoinGecko API).<a href="https://github.com/Ksschkw/KryptoKosi">CODE</a></li>
                         <li>🌦️ Real-time Weather Forecasts.<a href="https://github.com/Ksschkw/weatherkosi">CODE</a></li>
                         <li>🎨 Collaborative Canvas (Beta).<a href="https://github.com/Ksschkw/collab-draw">CODE</a></li>
+                        <li>it is not live atm</li>
                     </ul>
                     <div class="tech-stack">
                         <i class="devicon-python-plain colored" title="Python"></i>
@@ -206,75 +360,70 @@
                         <span class="status-tag">🚧 Canvas in Development</span>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- Kolaborasi-Kosi (Web) -->
+                <div class="project-card" data-category="web">
                     <div class="project-header">
                         <div class="project-thumbnail">
-                            <img src="imagesnshii\gaming.png" alt="GRPGHT game preview">
+                            <img src="imagesnshii\kolabrasi.png" alt="Kolaborasi-Kosi Preview">
                             <div class="project-links">
-                                <a href="http://kosisochukwu.pythonanywhere.com" class="cta-button" target="_blank">
-                                    <i id="startButton" class="fas fa-external-link-alt"></i> Live Demo
+                                <a href="https://kolaborasi-kosi.onrender.com" class="cta-button" target="_blank">
+                                    <i class="fas fa-desktop"></i> Live Demo
                                 </a>
-                                <a href="https://github.com/Ksschkw/GRPGHT" class="cta-button github-button" target="_blank">
+                                <a href="https://github.com/Ksschkw/collab-draw" class="cta-button github-button" target="_blank">
                                     <i class="fab fa-github"></i> Code
                                 </a>
                             </div>
                         </div>
-                        <h3>FPS Gamers Event Website (GRPGHT)</h3>
+                        <h3>Kolaborasi-Kosi</h3>
                         <div class="project-meta">
                             <span class="project-tag web-tag">WEB</span>
                             <span class="project-tag api-tag">API</span>
                         </div>
                     </div>
-                    <p>Platform for FPS gamers to compete in real-world events</p>
-                    <p>It was a school project, we were asked to build an event website</p>
-                    <p><b>A little about GRPGHT:</b></p>
-                    <p>GRPGHT, where FPS (First-Person Shooter) gamers come together to experience the thrill of live competitive gaming. Our mission is to create a dynamic and immersive platform that brings FPS enthusiasts of all skill levels to compete, collaborate, and celebrate their passion for gaming in a real-world setting.</p>
-                    <P>GRPGHT is just GroupEight without the vowels</P>
-                    <!-- <a href="http://kosisochukwu.pythonanywhere.com" target="_blank" class="cta-button" style="margin-top: 1rem;">View Demo</a> -->
+                    <p>Collaborative drawing canvas for real-time artwork.</p>
                 </div>
-                <div class="project-card">
+                <!-- AI Chat Assistant (AI) -->
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
                         <div class="project-thumbnail">
-                            <img src="imagesnshii\first.png" alt="First web preview">
+                            <img src="imagesnshii\aiassistant.png" alt="AI image preview">
                             <div class="project-links">
-                                <a href="http://okaforkosisochukwu.onrender.com" class="cta-button" target="_blank">
-                                    <i id="startButton" class="fas fa-external-link-alt"></i> Live Demo
+                                <a href="#" class="cta-button" target="_blank">
+                                    <i class="fas fa-desktop"></i> Live Demo
                                 </a>
-                                <a href="https://github.com/Ksschkw/kosip" class="cta-button github-button" target="_blank">
+                                <a href="https://github.com/Ksschkw/chatbot_and_backendformywebsite" class="cta-button github-button" target="_blank">
                                     <i class="fab fa-github"></i> Code
                                 </a>
                             </div>
                         </div>
-                        <h3>My First Website</h3>
+                        <h3>AI Chat Assistant</h3>
                         <div class="project-meta">
-                            <span class="project-tag web-tag">WEB</span>
+                            <span class="project-tag ai-tag">AI/ML</span>
+                            <span class="project-tag web-tag">NLP</span>
+                            <span class="project-tag api-tag">API</span>
                         </div>
                     </div>
-                    <p>My initial website</p>
-                    <a href="http://okaforkosisochukwu.onrender.com" target="_blank" class="cta-button" style="margin-top: 1rem;">View</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-thumbnail">
-                            <img src="imagesnshii\lab.png" alt="Lab image preview">
-                            <div class="project-links">
-                                <a href="https://nigeria-net-justaschoollabproject-hostit.onrender.com" class="cta-button" target="_blank">
-                                    <i id="startButton" class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/Ksschkw/Nigeria.net" class="cta-button github-button" target="_blank">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                    <p class="project-description">Custom-built chatbot (about me & other stuff) leveraging PyTorch with OpenRouter fallback. It's non-contextual(for now)</p>
+                    <div class="tech-stack">
+                        <i class="devicon-pytorch-original colored" title="PyTorch"></i>
+                        <i class="devicon-python-plain colored" title="Python"></i>
+                    </div>
+                    <div class="chat-bot-section">
+                        <div class="chat-container" id="chatContainer">
+                            <div class="chat-message bot-message">
+                                🤖 Hello! I'm your AI assistant. Ask me anything!
                             </div>
                         </div>
-                        <h3>A School lab project</h3>
-                        <div class="project-meta">
-                            <span class="project-tag web-tag">WEB</span>
+                        <div class="chat-input-group">
+                            <input type="text" id="chatInput" placeholder="Type your message...">
+                            <button id="sendButton" class="cta-button">Send</button>
                         </div>
-                    <p>I decided to host it, because why not?</p>
-                    <a href="https://nigeria-net-justaschoollabproject-hostit.onrender.com" target="_blank" class="cta-button" style="margin-top: 1rem;">View</a>
+                        <div class="status-indicator">
+                            <span id="statusText" class="neon-green">Status: Ready</span>
+                        </div>
+                    </div>
                 </div>
-                
-                
             </div>
         </div>
     </section>

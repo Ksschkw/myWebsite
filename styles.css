@@ -582,6 +582,19 @@ input[type="range"] {
     margin-right: 0.5rem;
 }
 
+.bot-tag {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid #007bff;
+}
+
+.portfolio h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--neon-green);
+    text-align: center;
+}
+
 /* Add media queries for responsiveness */
 @media (max-width: 768px) {
     .portfolio-grid {
@@ -670,5 +683,85 @@ input[type="range"] {
     .nav-links li a:hover {
         color: #5BFD01;
         text-shadow: 0 0 10px #5BFD01;
+    }
+}
+/* Add to existing CSS */
+.portfolio-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: transparent;
+    color: var(--silver);
+    border: 1px solid var(--silver);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--neon-green);
+    transition: width 0.5s ease;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.tab-button:hover {
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(48, 218, 18, 0.4);
+}
+
+.tab-button:hover::before {
+    width: 100%;
+}
+
+.tab-button.active {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    border-color: var(--neon-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(48, 218, 18, 0.4);
+}
+
+.tab-button.active::before {
+    width: 100%;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .tab-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
     }
 }

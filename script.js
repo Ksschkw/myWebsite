@@ -14,7 +14,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //     alert('Message sent successfully! I will respond shortly.');
 //     e.target.reset();
 // });
-
+document.addEventListener('DOMContentLoaded', () => {
+// Portfolio filtering
+    const tabButtons = document.querySelectorAll('.portfolio-tabs .tab-button');
+    const projectCards = document.querySelectorAll('.portfolio-grid .project-card');
+    
+    // Function to filter projects
+    function filterProjects(category) {
+        projectCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.classList.remove('hidden');
+                card.style.display = 'block';
+            } else {
+                card.classList.add('hidden');
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+    
+    // Set initial active tab
+    tabButtons[0].classList.add('active');
+    filterProjects('all');
+    
+    // Add event listeners to tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const category = button.getAttribute('data-category');
+            filterProjects(category);
+        });
+    });
+    
+});
 // Scroll animation for project cards
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -172,7 +208,7 @@ async function sendMessage() {
         showLoadingDots();
         
         // Replace with your actual API endpoint
-        const response = await fetch('https://chatbotandbackendformywebsite-production.up.railway.app/chat', {
+        const response = await fetch('https://chatbackend-kosi.onrender.com/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
