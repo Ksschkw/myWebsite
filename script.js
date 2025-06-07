@@ -253,3 +253,17 @@ sendButton.addEventListener('click', sendMessage);
 chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
 });
+// Add index to menu items for staggered animation
+document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.nav-links li');
+    menuItems.forEach((item, index) => {
+        item.style.setProperty('--i', index);
+    });
+    
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('menu-toggle').checked = false;
+        });
+    });
+});

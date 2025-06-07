@@ -620,72 +620,114 @@ input[type="range"] {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-    }
-    .hamburger {
-        display: block;
-        margin-right: 15px;
+        position: fixed;
         right: 2rem;
-        position: absolute;
         top: 1.5rem;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin: 5px auto;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 998;
+        cursor: pointer;
     }
 
     .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 50%;
-        left: 8%;
-        width: 80%;
-        background: #000;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin: 0;
         padding: 0;
-        /* padding: 15px; */
-        border: 1px solid #5BFD01;
-        box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
-        border-radius: 8px;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
+        border-left: 1px solid #5BFD01;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.4s ease, opacity 0.4s ease;
         opacity: 0;
     }
 
     .menu-toggle:checked ~ .nav-links {
-        max-height: 500px;
+        transform: translateX(0);
         opacity: 1;
-        margin-top: 10px;
     }
 
-    /* Hamburger Animation */
+    .menu-toggle:checked ~ .overlay {
+        display: block;
+    }
+
+    /* Enhanced Hamburger Animation */
     .menu-toggle:checked + .hamburger .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
+        background: #5BFD01;
     }
     
     .menu-toggle:checked + .hamburger .bar:nth-child(2) {
         opacity: 0;
+        transform: scaleX(0);
     }
     
     .menu-toggle:checked + .hamburger .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+        background: #5BFD01;
     }
 
     .nav-links li {
-        padding: 8px 0;
+        padding: 15px 0;
+        width: 100%;
         text-align: center;
     }
 
     .nav-links li a {
         color: #fff;
-        font-size: 0.9rem;
-        display: block;       
-        width: 100%;       
-        text-align: center;
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        transition: all 0.3s;
     }
+    
     .nav-links li a:hover {
         color: #5BFD01;
-        text-shadow: 0 0 10px #5BFD01;
+        background: rgba(255, 255, 255, 0.05);
+        text-shadow: 0 0 15px #5BFD01;
+    }
+    
+    /* Add subtle animation to menu items */
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .menu-toggle:checked ~ .nav-links li {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: calc(0.1s * var(--i));
     }
 }
-/* Add to existing CSS */
 .portfolio-tabs {
     display: flex;
     justify-content: center;
